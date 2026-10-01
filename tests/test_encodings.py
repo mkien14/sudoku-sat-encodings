@@ -6,7 +6,6 @@ CUSTOM_METHODS = {
     name: fn for name, fn in AMO_METHODS.items() if not name.startswith("pysat_")
 }
 
-
 def run_amo(amo_fn, lits):
     """Sinh mệnh đề AMO, trả về (clauses, top)."""
     top = max(lits)
