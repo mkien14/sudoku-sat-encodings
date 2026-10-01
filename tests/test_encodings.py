@@ -7,16 +7,13 @@ CUSTOM_METHODS = {
 }
 
 def run_amo(amo_fn, lits):
-    """Sinh mệnh đề AMO, trả về (clauses, top)."""
     top = max(lits)
     return amo_fn(lits, top)
 
 
 @pytest.mark.parametrize("name", CUSTOM_METHODS.keys())
-@pytest.mark.parametrize("k", range(1, 9))          # k nhỏ để brute force xong nhanh
+@pytest.mark.parametrize("k", range(1, 9))          
 def test_amo_correctness(name, k):
-    """Với mọi tổ hợp gán giá trị cho k literal gốc, solver phải đồng ý
-    đúng khi và chỉ khi tổ hợp đó có tối đa 1 literal đúng."""
     amo_fn = CUSTOM_METHODS[name]
     lits = list(range(1, k + 1))
     clauses, _ = run_amo(amo_fn, lits)
@@ -35,7 +32,6 @@ def test_amo_correctness(name, k):
 
 @pytest.mark.parametrize("name", CUSTOM_METHODS.keys())
 def test_no_variable_collision(name):
-    """Kiem tra ham co tra ve top hop le: top moi phai >= top cu."""
     amo_fn = CUSTOM_METHODS[name]
     lits = [101, 102, 103, 104, 105]
     clauses, new_top = run_amo(amo_fn, lits)

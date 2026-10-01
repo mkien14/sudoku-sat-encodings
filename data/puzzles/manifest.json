@@ -1,0 +1,23 @@
+[
+  {
+    "N": 9,
+    "holes_ratio": 0.6,
+    "seed": 1,
+    "file": "sudoku_N9_seed1.txt",
+    "holes": 48
+  },
+  {
+    "N": 16,
+    "holes_ratio": 0.6,
+    "seed": 1,
+    "file": "sudoku_N16_seed1.txt",
+    "holes": 153
+  },
+  {
+    "N": 25,
+    "holes_ratio": 0.6,
+    "seed": 1,
+    "file": "sudoku_N25_seed1.txt",
+    "holes": 375
+  }
+]
