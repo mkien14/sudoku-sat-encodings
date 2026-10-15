@@ -1,0 +1,26 @@
+N,method,solved_count,timeout_count,skipped_count,total_timeout_including_skipped,total_runs_in_denominator,timeout_rate_percent
+25,Commander,39,0,0,0,39,0.0
+25,Product,39,0,0,0,39,0.0
+25,Bitwise,39,0,0,0,39,0.0
+25,Pairwise,39,0,0,0,39,0.0
+25,Sequential Counter,39,0,0,0,39,0.0
+36,Commander,39,0,0,0,39,0.0
+36,Product,39,0,0,0,39,0.0
+36,Bitwise,39,0,0,0,39,0.0
+36,Pairwise,39,0,0,0,39,0.0
+36,Sequential Counter,36,3,0,3,39,7.6923076923076925
+49,Commander,9,4,2,6,15,40.0
+49,Product,9,4,2,6,15,40.0
+49,Bitwise,9,4,2,6,15,40.0
+49,Pairwise,9,4,2,6,15,40.0
+49,Sequential Counter,9,4,2,6,15,40.0
+64,Commander,6,4,2,6,12,50.0
+64,Product,6,4,2,6,12,50.0
+64,Bitwise,6,4,2,6,12,50.0
+64,Pairwise,6,4,2,6,12,50.0
+64,Sequential Counter,6,4,2,6,12,50.0
+81,Commander,6,2,1,3,9,33.33333333333333
+81,Product,6,2,1,3,9,33.33333333333333
+81,Bitwise,6,2,1,3,9,33.33333333333333
+81,Pairwise,6,2,1,3,9,33.33333333333333
+81,Sequential Counter,6,2,1,3,9,33.33333333333333
