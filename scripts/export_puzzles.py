@@ -1,12 +1,3 @@
-# scripts/export_puzzles.py
-"""
-Xuat chinh xac cac de da dung trong thuc nghiem (moi (N, ti le, seed) trong seed_sweep.csv)
-ra mot file CSV de nguoi khac doi chieu duoc, thay cho cac file de roi rac cu.
-
-    python.exe scripts\\export_puzzles.py
-Ket qua: data/puzzles/seed_sweep_puzzles.csv  (cot: N, holes_ratio, seed, n_holes, puzzle)
-Ky tu '.' la o trong; moi ky tu khac la gia tri theo puzzle_gen.SYMBOLS (phan biet hoa/thuong).
-"""
 import csv
 import os
 import sys

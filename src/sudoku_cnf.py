@@ -1,4 +1,5 @@
 import math
+from puzzle_gen import symbol_to_value
 
 def var(r, c, v, N):
     return r * N * N + c * N + v + 1
@@ -31,6 +32,6 @@ def build_clauses(N, puzzle, amo_fn):
     for idx, ch in enumerate(puzzle):
         if ch not in "0.":
             r, c = divmod(idx, N)
-            clauses.append([var(r, c, int(ch, 36) - 1, N)])
+            clauses.append([var(r, c, symbol_to_value(ch), N)])
 
     return clauses, top

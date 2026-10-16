@@ -1,8 +1,9 @@
 import time
 from docplex.cp.model import CpoModel
 from common import SolveResult
+from puzzle_gen import symbol_to_value
 
-def solve(N, puzzle, time_limit=300):
+def solve(N, puzzle, time_limit=3600):
     B = int(N ** 0.5)
     m = CpoModel()
 
@@ -21,13 +22,16 @@ def solve(N, puzzle, time_limit=300):
     for idx, ch in enumerate(puzzle):
         if ch not in "0.":
             r, c = divmod(idx, N)
-            m.add(x[r][c] == int(ch, 36))
+            m.add(x[r][c] == symbol_to_value(ch) + 1)
     t1 = time.time()
 
     sol = m.solve(TimeLimit=time_limit, LogVerbosity="Quiet")
     t2 = time.time()
 
-    ok = sol is not None
+    status = sol.get_solve_status() if sol is not None else "NoSolveResult"
+    ok = status in ("Feasible", "Optimal")
+    timed_out = status == "Unknown"          
+
     grid = None
     if ok:
         grid = [[sol[x[r][c]] for c in range(N)] for r in range(N)]
@@ -35,4 +39,5 @@ def solve(N, puzzle, time_limit=300):
     return SolveResult(
         method="cplex_cp", N=N, sat=ok,
         solve_time=t2 - t1, encode_time=t1 - t0, grid=grid,
+        extra={"status": status, "timed_out": timed_out},
     )
